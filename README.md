@@ -1,11 +1,13 @@
 # Lights Out — Álgebra Aplicada
 
-Implementación del modelo algebraico y del solver computacional del juego Lights Out mediante sistemas lineales sobre el cuerpo finito Z₂.
+Implementación del modelo algebraico y del solver computacional del juego
+Lights Out mediante sistemas lineales sobre el cuerpo finito Z₂.
 
 ## Contenido
 
 - `lights_out.py`: módulo principal con la función `solve_lights_out`.
 - `test_lights_out.py`: pruebas unitarias del solver.
+- `lights_out_app.py`: aplicación gráfica interactiva basada en Tkinter.
 - `requirements.txt`: dependencias del proyecto.
 
 ## Requisitos
@@ -44,9 +46,13 @@ presses = solve_lights_out(board)
 print(presses)
 ```
 
-La función recibe una matriz cuadrada de enteros binarios y devuelve un vector binario en orden fila por fila. Cada posición del vector indica si la celda correspondiente debe presionarse.
+La función recibe una matriz cuadrada de enteros binarios y devuelve un vector
+binario en orden fila por fila. Cada posición del vector indica si la celda
+correspondiente debe presionarse.
 
-Si el sistema no tiene solución, la función lanza `ValueError`. Cuando existen varias soluciones, devuelve una solución particular fijando las variables libres en cero.
+Si el sistema no tiene solución, la función lanza `ValueError`. Cuando existen
+varias soluciones, devuelve una solución particular fijando las variables libres
+en cero.
 
 ## Ejecución de las pruebas
 
@@ -56,4 +62,37 @@ Para ejecutar la suite completa:
 python3 -m unittest -v
 ```
 
-Las pruebas cubren tableros de distintos tamaños, sistemas inconsistentes, soluciones no únicas, entradas inválidas y la construcción de la matriz de adyacencia.
+Las pruebas cubren tableros de distintos tamaños, sistemas inconsistentes,
+soluciones no únicas, entradas inválidas y la construcción de la matriz de
+adyacencia.
+
+## Ejecución de la aplicación interactiva
+
+La interfaz gráfica permite crear un tablero, cambiar manualmente las luces y
+aplicar una solución calculada por el solver.
+
+En Linux o macOS:
+
+```bash
+python3 lights_out_app.py
+```
+
+En Windows:
+
+```powershell
+py lights_out_app.py
+```
+
+La aplicación utiliza Tkinter, que normalmente viene incluido con Python. En
+Ubuntu, si Tkinter no está instalado, ejecutar:
+
+```bash
+sudo apt install python3-tk
+```
+
+Luego:
+
+1. Seleccionar el tamaño del tablero.
+2. Pulsar `Nuevo tablero`.
+3. Hacer clic en las luces para jugar manualmente.
+4. Pulsar `Resolver` para aplicar automáticamente una solución.
