@@ -68,8 +68,8 @@ adyacencia.
 
 ## Ejecución de la aplicación interactiva
 
-La interfaz gráfica permite crear un tablero, cambiar manualmente las luces y
-aplicar una solución calculada por el solver.
+La interfaz gráfica permite seleccionar tableros de 3×3 a 7×7, cambiar
+manualmente las luces y visualizar una pista calculada por el solver.
 
 En Linux o macOS:
 
@@ -92,7 +92,9 @@ sudo apt install python3-tk
 
 Luego:
 
-1. Seleccionar el tamaño del tablero.
-2. Pulsar `Nuevo tablero`.
-3. Hacer clic en las luces para jugar manualmente.
-4. Pulsar `Resolver` para aplicar automáticamente una solución.
+1. Seleccionar el tamaño del tablero en el selector `CONFIGURACIÓN`.
+2. Pulsar `✦ NUEVO JUEGO` para generar un tablero jugable.
+3. Hacer clic en las celdas para conmutarlas junto con sus vecinos ortogonales.
+4. Pulsar `↺ REINICIAR` para volver al estado inicial.
+5. Pulsar `⌁ RESOLVER / PISTA` para mostrar las pulsaciones sugeridas sin
+   modificar el tablero.
